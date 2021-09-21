@@ -5,4 +5,4 @@ project(dz1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(dz1 main.cpp power.h power.cpp rgba.h rgba.cpp)
+add_executable(dz1 main.cpp power.h power.cpp rgba.h rgba.cpp my_stack.h my_stack.cpp)
