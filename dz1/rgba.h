@@ -1,7 +1,7 @@
 #ifndef RGBA_H
 #define RGBA_H
 
-#include <cstdint>
+
 #include <iostream>
 
 
