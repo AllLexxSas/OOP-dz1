@@ -4,12 +4,21 @@ My_Stack::My_Stack()
 {
     reset();
 }
+
+My_Stack::~My_Stack()
+{
+    delete[]  stack;
+}
 //сброс стека
 void My_Stack::reset()
 {
-    std::fill_n(stack,size_stack,0);
+    //std::fill_n(stack,size_stack,NULL);
+    delete [] stack;
+    stack = new int[size_stack];
     size =0;
 }
+
+
 //добавление значения в стек
 bool My_Stack::push(int val)
 {
@@ -19,20 +28,22 @@ bool My_Stack::push(int val)
         return true;
     } else
     {
-        size--;
+        std::cout << "the stack is full\n";
+
         return false;
     }
 }
+
 //вывод значения из стека
-int My_Stack::pop(){
-    int temp;
-    if(size >= 0)
-            stack[(--size)] = 0;
-    else{
-        std::cout << "stack is full\n";
-        temp = size;
+bool My_Stack::pop(){
+    if(size >= 0){
+            stack[(--size)] = NULL;
+            return true;
     }
-    return temp;
+    else{
+        std::cout << "stack is empty\n";
+        return false;
+    }
 }
 
 void My_Stack::print()

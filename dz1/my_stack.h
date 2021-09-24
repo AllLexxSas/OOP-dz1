@@ -4,21 +4,23 @@
 #include <cstdint>
 #include <iostream>
 
-#define size_stack 10
+//#define size_stack 10
 
 class My_Stack
 {
+protected:
+     int size_stack = 10;
 public:
     My_Stack();
+    ~My_Stack();
     void reset();
     bool push(int);
-    int pop();
+    bool pop();
     void print();
 
 
 private:
-    //int size_stack = 10;
-    int stack[size_stack];
+    int *stack;
     std::size_t size;
 
 };
